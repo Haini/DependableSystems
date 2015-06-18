@@ -1,0 +1,36 @@
+Type: Markov
+Number of nodes: 2
+Number of arcs: 1
+Number of parameters: 0
+Node:
+Name: 0
+X, Y: 165,165
+LabelX, LabelY: 174,195
+
+Node:
+Name: 1
+X, Y: 365,165
+LabelX, LabelY: 374,195
+
+Arc:
+Source: 0
+Dest: 1
+ArcPoints: [java.awt.Point[x=194,y=177], java.awt.Point[x=365,y=177]]
+ArcLoopValue: []
+LabelX, LabelY: 257,153
+Rate: 3 * lambda_R * lambda_N
+
+
+Output:
+Outputs created: 0
+Hashtable Init Prob: 0
+Hashtable Reward: 0
+Vector UP: []
+Hashtable UP: 0
+Vector DOWN: []
+Hashtable DOWN: 0
+Vector Indice Text: []
+
+Needed:
+Reward Needed:false
+

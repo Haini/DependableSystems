@@ -1,0 +1,11 @@
+Model Name : MTTF_RED
+Owner : SHARPE Project Group
+Date Created : Mon Jun 15 13:39:33 GMT 2015
+Comment : 
+
+CommentEnd
+
+SubModel : RED
+Type : Markov Model
+
+
