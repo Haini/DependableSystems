@@ -3,65 +3,38 @@ lambda_N    2/100000
 lambda_R    1/10000
 mu          1/100
 end
-
+*Description of the simple model
 markov simple
 0 1 lambda_N + 3*lambda_R
 1 0 mu
 end
-
 *Starting probability
 0 1.0
 end
-
+*Description of the redundant model
 markov redundant
-
 2 0 mu
 3 2 mu
 1 3 mu
 1 0 mu
-
 0 1 2*lambda_N
 0 2 4*lambda_R
 2 3 2*lambda_N
 1 3 4*lambda_R
-
-*Failstates (increase amount since we want to get back from them again)
 3 34 3*lambda_R + lambda_N
 1 14 lambda_N
 2 24 3*lambda_R
-
-*Add the repair edges, you will get a 0.0000 otherwise and it doesn't make any 
-*sense to leave them out anyways. I just forgot to add them and was surprised.
-
 34 3 mu
 14 1 mu
 24 2 mu
-
 end
-
 *starting probability
 0 1.0
 end
-
-
-* calculate MTTF
+*calculate Availability 
 expr prob(simple, 0)
 expr 1-(prob(redundant, 24) + prob(redundant, 34) + prob(redundant, 14))
 end
 
 
 
-/* DO NOT USE THIS; IT'S JUST THE OUTPUT.
- * OUTPUT FOR AVAILABILTY
- */
-* calculate MTTF
-
-expr prob(simple, 0)
-    prob(simple, 0):   9.6899e-001
-
--------------------------------------------
-
-expr 1-(prob(redundant, 24) + prob(redundant, 34) + prob(redundant, 14))
-    1-(prob(redundant, 24) + prob(redundant, 34) + prob(redundant, 14)):   9.9872e-001
-
- ------------------------------------------

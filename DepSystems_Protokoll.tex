@@ -4,6 +4,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx} %For images
+\usepackage[german]{babel}
 
 \usepackage{listings} %For code
 
@@ -72,6 +73,7 @@ Für das einfache System wird einfach eine neue Kante die zurueck in den funktio
 \end{figure}
 \lstinputlisting{AVAILABILITY_Einfach.txt}
 \subsection{Redundantes System}
+Im redundanten System reicht nun ein Fehlerzustand nicht mehr aus da wir aus diesem auch wieder zurueck kehren koennen. Um sich den Zustand des restlichen Systems zu "merken" bzw. um deterministisch agieren zu koennen werden 3 neue Knoten eingefuehrt, die jeweils als Fehlzustaende fungieren und ueber eine Kante mit dem letzten funktionierenden Zustand verbunden sind. 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=90mm]{AVAILABILITY_RED.png}
@@ -79,5 +81,14 @@ Für das einfache System wird einfach eine neue Kante die zurueck in den funktio
 \end{figure}
 \lstinputlisting{AVAILABILITY_RED.txt}
 \subsection{Vergleich der beiden Systeme}
+Der Vergleich der beiden Systeme wird mit dem Befehl \textit{prob(SYS, NODE)} ausgeführt. Dieser errechnet die Zustandswahrscheinlichkeit fuer eine bestimmte \textit{NODE} im angegebenen System.\\
+Im einfachen System reicht es die Wahrscheinlichkeit berechnen zu lassen mit der sich das System im gültigen Zustand befindet. \\
+Im redundanten Fall ist es einfacher die Wahrscheinlichkeit der Fehlzustände berechnen zu lassen, diese zu addieren und von 100\% abzuziehen.
+Der Aufbau der Befehlsabfolge sieht so aus:
+\lstinputlisting{AVAILABILITY.txt}
+Und das Ergebnis dann folgendermaßen:
+\lstinputlisting{AVAILABILITY_RESULTS.txt}
+Wie man sieht beträgt die Wahrscheinlichkeit dafür dass sich das einfache System in einem gültigen Zustand befindet $96.899\%$. \\
+Die Wahrscheinlichkeit in einem redundanten System beträgt dafür $99.87\%$.
 \section{Kosten}
 \end{document}
