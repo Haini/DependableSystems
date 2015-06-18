@@ -15,11 +15,24 @@
 Ein Computernetzwerk soll durch Markovketten modelliert werden um es auf Fehlersicherheit zu überprüfen.
 \\ 
 Konkret soll die Mean Time to Failure (MTTF) und die Verfügbarkeit zwischen 2 Systemen evaluiert und verglichen werden. Eines ohne Redundanz und eines mit.
-Zusätzlich soll ein Vergleich zwischen den Kosten für die beiden Systeme durchgeführt werden.
+Zusätzlich soll ein Vergleich zwischen den Kosten fuer die beiden Systeme durchgeführt werden.
 \section{Aufgabenstellung}
- 
+Für beide Systeme gelten die folgenden Fehlerraten ($\lambda$) und Reparaturraten ($\mu$).
+\begin{itemize}
+	\item $\lambda_R=10^{-4}/Std.$ fuer Rechner
+	\item $\lambda_N=2*10^{-5}/Std.$ fuer Switches
+	\item  $\mu=10^{-2}/Std. $
+	
+Um funktionsfaehig zu sein benoetigt das Netzwerk mindestens einen Switch und drei Rechner.
+\end{itemize}
 \section{Mean Time to Failure}
 \subsection{Einfaches System}
+Das Computernetzwerk besteht aus drei über einen Switch verbunden Rechnern.
+\\
+Um die MTTF zu evaluieren reicht es das System durch 2 Zustaende zu modellieren. \\
+Einer stellt den funktionierenden Zustand dar, der andere den Fehlerzustand.
+Die Wahrscheinlichkeit fuer einen Uebergang in den Fehlerzustand setzt sich dann aus $3*\lambda_R + \lambda_N$ zusammen.
+Die Reparaturrate muss nicht berücksichtigt werden da wir uns im Moment ausschließlich fuer die MTTF interessieren.
 \subsection{Redundantes System}
 \subsection{Vergleich der beiden Systeme}
 \section{Availability}
