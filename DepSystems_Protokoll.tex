@@ -1,9 +1,11 @@
 \documentclass[10pt,a4paper]{article}
 %\usepackage[utf8]{inputenc}
-%\usepackage{amsmath}
-%\usepackage{amsfonts}
-%\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx} %For images
 
+\usepackage{listings} %For code
 
 \begin{document}
 
@@ -30,14 +32,52 @@ Um funktionsfaehig zu sein benoetigt das Netzwerk mindestens einen Switch und dr
 Das Computernetzwerk besteht aus drei über einen Switch verbunden Rechnern.
 \\
 Um die MTTF zu evaluieren reicht es das System durch 2 Zustaende zu modellieren. \\
-Einer stellt den funktionierenden Zustand dar, der andere den Fehlerzustand.
-Die Wahrscheinlichkeit fuer einen Uebergang in den Fehlerzustand setzt sich dann aus $3*\lambda_R + \lambda_N$ zusammen.
+Einer stellt den funktionierenden Zustand (0) dar, der andere den Fehlerzustand (1).
+Die Wahrscheinlichkeit fuer einen Uebergang in den Fehlerzustand setzt sich dann aus $3*\lambda_R + \lambda_N$ zusammen. Diese Vereinfachung kann vorgenommen werden da jeder Ausfall, egal welcher Art, in einen Fehlerzustand fuehrt. 
 Die Reparaturrate muss nicht berücksichtigt werden da wir uns im Moment ausschließlich fuer die MTTF interessieren.
+\\
+Das System kann sowohl graphisch als auch in Textform beschrieben werden:
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{MTTM_EinfachesModell.png}
+\caption{Einfaches System in \textit{sharpe} modelliert \label{mmtm_einfach}}
+\end{figure}
+
+\lstinputlisting{MTTF_Einfach_Modell.txt}
 \subsection{Redundantes System}
+Das redundante Computernetzwerk besteht aus 4 Rechnern und 2 Switches was die Ausfallwahrscheinlichkeit gegenueber dem einfachen System deutlich verringern sollte.\\
+Statt 2 Knoten werden nun 5 Knoten benoetigt um alle Uebergaenge korrekt abzubilden.\\
+Das System ist in den Knoten 0,1,2,3 funktionsfaehig, Knoten 4 ist der Fehlerzustand (siehe Grafik \ref{mmtm_redundant}).
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{MTTM_ReduntantesModell.png}
+\caption{Redundantes System in \textit{sharpe} modelliert \label{mmtm_redundant}}
+\end{figure}
+\lstinputlisting{MTTF_Redundant_Modell.txt}
 \subsection{Vergleich der beiden Systeme}
+Um die beiden Systeme vergleichen zu koennen muss nun auch die Simulation derselbigen durchgeführt werden. Dies geschieht durch folgende Befehlssequenz in \textit{sharpe}:
+\lstinputlisting{MTTF.txt}
+
+Daraus resultieren die folgenden Ergebnisse: 
+\lstinputlisting{MTTF_RESULTS.txt}
+Das bedeutet dass das einfache Modell nach ca. 31250 Stunden ausfällt und das redundante erst nach 88540 Stunden. Man sieht dass sich durch das hinzufügen der Redundanz der Zeitraum bis zum Ausfall deutlich erhoeht. 
 \section{Availability}
+Im Gegensatz zur MTTF ist bei der Availability die Reparaturrate nun auch vom Fehlzustand aus zu berücksichtigen.
 \subsection{Einfaches System}
+Für das einfache System wird einfach eine neue Kante die zurueck in den funktionierenden Zustand fuehrt hinzugefuegt.
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{AVAILABILITY_Einfach.png}
+\caption{Einfaches System mit neuer Kante in \textit{sharpe} modelliert \label{avail_einfach}}
+\end{figure}
+\lstinputlisting{AVAILABILITY_Einfach.txt}
 \subsection{Redundantes System}
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=90mm]{AVAILABILITY_RED.png}
+\caption{Redundantes System mit neuen Knoten und Kanten in \textit{sharpe} modelliert \label{avail_einfach}}
+\end{figure}
+\lstinputlisting{AVAILABILITY_RED.txt}
 \subsection{Vergleich der beiden Systeme}
 \section{Kosten}
 \end{document}

@@ -1,0 +1,5 @@
+*Description of the simple model with new repair edge
+markov simple
+0 1 lambda_N + 3*lambda_R
+1 0 mu
+end
