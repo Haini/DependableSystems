@@ -1,11 +1,11 @@
 \documentclass[10pt,a4paper]{article}
-%\usepackage[utf8]{inputenc}
+
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-\usepackage{graphicx} %For images
+\usepackage{graphicx} 
 \usepackage[german]{babel}
-
+\usepackage[utf8]{inputenc}
 \usepackage{listings} %For code
 
 \begin{document}
@@ -55,6 +55,7 @@ Das System ist in den Knoten 0,1,2,3 funktionsfaehig, Knoten 4 ist der Fehlerzus
 \caption{Redundantes System in \textit{sharpe} modelliert \label{mmtm_redundant}}
 \end{figure}
 \lstinputlisting{MTTF_Redundant_Modell.txt}
+\newpage
 \subsection{Vergleich der beiden Systeme}
 Um die beiden Systeme vergleichen zu koennen muss nun auch die Simulation derselbigen durchgeführt werden. Dies geschieht durch folgende Befehlssequenz in \textit{sharpe}:
 \lstinputlisting{MTTF.txt}
@@ -80,15 +81,18 @@ Im redundanten System reicht nun ein Fehlerzustand nicht mehr aus da wir aus die
 \caption{Redundantes System mit neuen Knoten und Kanten in \textit{sharpe} modelliert \label{avail_einfach}}
 \end{figure}
 \lstinputlisting{AVAILABILITY_RED.txt}
+\newpage
 \subsection{Vergleich der beiden Systeme}
 Der Vergleich der beiden Systeme wird mit dem Befehl \textit{prob(SYS, NODE)} ausgeführt. Dieser errechnet die Zustandswahrscheinlichkeit fuer eine bestimmte \textit{NODE} im angegebenen System.\\
 Im einfachen System reicht es die Wahrscheinlichkeit berechnen zu lassen mit der sich das System im gültigen Zustand befindet. \\
 Im redundanten Fall ist es einfacher die Wahrscheinlichkeit der Fehlzustände berechnen zu lassen, diese zu addieren und von 100\% abzuziehen.
+
 Der Aufbau der Befehlsabfolge sieht so aus:
 \lstinputlisting{AVAILABILITY.txt}
+\newpage
 Und das Ergebnis dann folgendermaßen:
 \lstinputlisting{AVAILABILITY_RESULTS.txt}
 Wie man sieht beträgt die Wahrscheinlichkeit dafür dass sich das einfache System in einem gültigen Zustand befindet $96.899\%$. \\
-Die Wahrscheinlichkeit in einem redundanten System beträgt dafür $99.87\%$.
+Die Wahrscheinlichkeit in einem redundanten System beträgt $99.87\%$.
 \section{Kosten}
 \end{document}
