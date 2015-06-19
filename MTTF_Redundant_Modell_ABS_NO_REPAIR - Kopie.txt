@@ -1,37 +1,30 @@
 bind
-lambda_N 2/100000
 lambda_R 1/10000
-mu 1/100
+lambda_N 2/100000
+mu 1/100      
 end
 
+*Description of the redundant model
 markov redundant
-2 0 mu
-3 2 mu
-1 3 mu
-1 0 mu
 
 0 1 2*lambda_N
 0 2 4*lambda_R
 2 3 2*lambda_N
 1 3 4*lambda_R
-3 34 3*lambda_R + lambda_N
-1 14 lambda_N
-2 24 3*lambda_R
-34 3 mu
-14 1 mu
-24 2 mu
+3 4 3*lambda_R + lambda_N
+1 4 lambda_N
+2 4 3*lambda_R
 end
 
-*Starting probability
+* starting probability
 0 1.0
 end
-
 
 * evaluation (cumulative distribution function)
 cdf(redundant)
 
 * Start End Inc
-eval(redundant) 0 500000 5000 
+eval(redundant) 0 500000 5000
 
 * After 2 month
 expr value(60;SYS)

@@ -1,5 +1,10 @@
 -------------------------------------------
+/* Simple System with absorbing state */
 mean(SIM):   3.1250e+003
 -------------------------------------------
+/* Redundant System with absorbing state and with some repair edges */
 mean(RED):   8.8540e+004
+-------------------------------------------
+/* System with absorbing state and absolutely no repair edges */
+mean(RED):   5.7678e+003 
 -------------------------------------------

@@ -1,0 +1,6 @@
+* evaluation (cumulative distribution function)
+cdf(redundant)
+
+* Start End Inc
+eval(redundant) 0 500000 5000
+end

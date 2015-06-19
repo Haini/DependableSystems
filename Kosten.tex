@@ -1,0 +1,257 @@
+% This file was converted to LaTeX by Writer2LaTeX ver. 1.0.2
+% see http://writer2latex.sourceforge.net for more info
+\documentclass[a4paper]{article}
+\usepackage[ascii]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english,ngerman]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb,amsfonts,textcomp}
+\usepackage{color}
+\usepackage{array}
+\usepackage{hhline}
+\usepackage{hyperref}
+\hypersetup{pdftex, colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=}
+% Page layout (geometry)
+\setlength\voffset{-1in}
+\setlength\hoffset{-1in}
+\setlength\topmargin{2cm}
+\setlength\oddsidemargin{2cm}
+\setlength\textheight{25.7cm}
+\setlength\textwidth{17.001cm}
+\setlength\footskip{0.0cm}
+\setlength\headheight{0cm}
+\setlength\headsep{0cm}
+% Footnote rule
+\setlength{\skip\footins}{0.119cm}
+\renewcommand\footnoterule{\vspace*{-0.018cm}\setlength\leftskip{0pt}\setlength\rightskip{0pt plus 1fil}\noindent\textcolor{black}{\rule{0.25\columnwidth}{0.018cm}}\vspace*{0.101cm}}
+% Pages styles
+\makeatletter
+\newcommand\ps@Standard{
+  \renewcommand\@oddhead{}
+  \renewcommand\@evenhead{}
+  \renewcommand\@oddfoot{}
+  \renewcommand\@evenfoot{}
+  \renewcommand\thepage{\arabic{page}}
+}
+\makeatother
+\pagestyle{Standard}
+\title{}
+\author{}
+\date{2015-06-18T21:48:05.083000000}
+\begin{document}
+Abschlie{\ss}end soll noch berechnet werden, ab welchem Verh\"altnis von
+Ausfallkosten zu Normalbetriebskosten des Systems, die fehlertolerant
+erweiterte Systemvariante zu bevorzugen ist. Laut Angabe ist der Normalbetrieb der erweiterten Variante 2.5 mal
+so teuer wie der Normalbetrieb der einfachen Variante. W\"ahrend sich ein System
+im ausgefallenen Zustand befindet, verursacht es laufende
+Ausfallkosten, die sich auf ein Vielfaches der Betriebskosten der einfachen Variante belaufen.
+
+
+\bigskip
+
+In den weiteren Berechnung werden die folgenden Bezeichnungen verwendet:
+
+
+\bigskip
+
+ $K_{\mathit{Normalbetrieb}}$: Kosten f\"ur den Normbalbetrieb des
+einfachen Systems
+
+ $K_{\mathit{Ausfall}}$ : laufende Ausfallkosten, im Fall dass sich das
+System im Zustand \ {\quotedblbase}Ausgefallen{\textquotedblleft}
+befindet.
+
+ $K_{\mathit{GS}}$ : Gesamtkosten f\"ur die simple Systemvariante
+
+ $K_{\mathit{GR}}$ : Gesamtkosten f\"ur die redundante Systemvariante
+
+ $C$ : Vielfachheit der Kosten bei Systemausfall im Vergleich zum Normalbetrieb der einfachen Variante.  
+ 
+ $C=\frac{K_{\mathit{Ausfall}}}{K_{\mathit{Normalbetrieb}}}$ 
+
+
+\bigskip
+
+ $t_{\mathit{Normalbetrieb}}$ : Zeit in der sich das System laut
+Spezifikation verh\"alt
+
+ $t_{\mathit{Ausfall}}$ : Zeit in der sich das System im Zustand
+{\quotedblbase}Ausgefallen{\textquotedblleft} befindet.
+
+
+\bigskip
+
+ $A_{S}$ : \ Verf\"ugbarkeit des einfachen Systems
+
+ $A_{R}$ : \ Verf\"ugbarkeit des redundant aufgebauten Systems.
+
+
+\bigskip
+
+Die Gesamtkosten f\"ur ein System setzen sich aus den Betriebskosten
+w\"ahrend des Normalbetriebs und den Ausfallkosten w\"ahrend der Zeiten
+in denen sich das System im ausgefallenen Zustand befindet zusammen.
+
+
+\bigskip
+
+Damit ergeben sich die folgenden Gesamtkosten:
+
+
+\bigskip
+
+\begin{equation*}
+K_{\mathit{GS}}=K_{\mathit{Normalbetrieb}}\ast
+t_{\mathit{Normalbetrieb}}+K_{\mathit{Ausfall}}\ast
+t_{\mathit{Ausfall}}
+\end{equation*}
+\begin{equation*}
+K_{\mathit{GR}}=2.5\ast K_{\mathit{Normalbetrieb}}\ast
+t_{\mathit{Normalbetrieb}}+K_{\mathit{Ausfall}}\ast
+t_{\mathit{Ausfall}}
+\end{equation*}
+
+\bigskip
+
+Die Ausfallkosten f\"ur das Systems bleiben gleich, unabh\"angig davon,
+welche Variante gew\"ahlt wird und betragen ein Vielfaches der Kosten
+des einfachen Systems im Normalbetrieb.
+
+Wir k\"onnen also weiter schreiben:
+
+
+\bigskip
+
+\begin{equation*}
+K_{\mathit{GS}}=K_{\mathit{Normalbetrieb}}\ast
+t_{\mathit{Normalbetrieb}}+C\ast K_{\mathit{Normalbetrieb}}\ast
+t_{\mathit{Ausfall}}
+\end{equation*}
+
+\bigskip
+
+\begin{equation*}
+K_{\mathit{GR}}=2.5\ast K_{\mathit{Normalbetrieb}}\ast
+t_{\mathit{Normalbetrieb}}+C\ast K_{\mathit{Normalbetrieb}}\ast
+t_{\mathit{Ausfall}}
+\end{equation*}
+
+\bigskip
+
+Die durchschnittlichen Zeiten f\"ur Normalbetrieb und Ausfall berechnen sich wie folgt:
+
+
+\bigskip
+
+\begin{equation*}
+\mathit{Verf\text{\"u}gbarkeit}=\frac{\mathit{Zeitdauer}\mathit{der}\mathit{Einsatzf\text{\"a}higkeit}}{\mathit{Zeitdauer}\mathit{der}\mathit{Einsatzf\text{\"a}higkeit}+\mathit{Zeitdauer}\mathit{der}\mathit{Nicht}-\mathit{Einsatzf\text{\"a}higkeit}}
+\end{equation*}
+\begin{equation*}
+A=\frac{t_{\mathit{Normalbetrieb}}}{t_{\mathit{Normalbetrieb}}+t_{\mathit{Ausfall}}}
+\end{equation*}
+
+$A(t_{\mathit{Normalbetrieb}}+t_{\mathit{Ausfall}})=t_{\mathit{Normalbetrieb}}$
+
+
+\begin{equation*}
+t_{\mathit{Ausfall}}=t_{\mathit{Normalbetrieb}}\ast (\frac{1}{A}-1)
+\end{equation*}
+
+\bigskip
+
+Damit ergibt sich:
+
+
+\bigskip
+
+\begin{equation*}
+K_{\mathit{GS}}=K_{\mathit{Normalbetrieb}}\ast
+t_{\mathit{Normalbetrieb}}+C\ast K_{\mathit{Normalbetrieb}}\ast
+t_{\mathit{Normalbetrieb}}\ast (\frac{1}{A_{S}}-1)
+\end{equation*}
+
+\bigskip
+
+\begin{equation*}
+K_{\mathit{GS}}=K_{\mathit{Normalbetrieb}}\ast
+t_{\mathit{Normalbetrieb}}\ast (1+C\ast (\frac{1}{A_{S}}-1))
+\end{equation*}
+und
+
+
+\bigskip
+
+\begin{equation*}
+K_{\mathit{GR}}=K_{\mathit{Normalbetrieb}}\ast
+t_{\mathit{Normalbetrieb}}\ast (2.5+C\ast (\frac{1}{A_{R}}-1))
+\end{equation*}
+Die fehlertolerant erweiterte Systemvariante ist zu bevorzugen, sobald gilt:
+
+
+\bigskip
+
+\begin{equation*}
+K_{\mathit{GR}}<K_{\mathit{GS}}
+\end{equation*}
+Die Konstante berechnet sich daher zu:
+
+
+\bigskip
+
+\begin{equation*}
+(2.5+C\ast (\frac{1}{A_{R}}-1))<(1+C\ast (\frac{1}{A_{S}}-1))
+\end{equation*}
+
+\bigskip
+
+\begin{equation*}
+1.5+C\ast (\frac{1}{A_{R}}-1)<C\ast (\frac{1}{A_{S}}-1)
+\end{equation*}
+
+\bigskip
+
+\begin{equation*}
+1.5<C\ast ((\frac{1}{A_{S}}-1)-(\frac{1}{A_{R}}-1))
+\end{equation*}
+
+\bigskip
+
+\begin{equation*}
+C>\frac{1.5}{(\frac{1}{A_{S}}-1)-(\frac{1}{A_{R}}-1)}
+\end{equation*}
+
+\bigskip
+
+\begin{equation*}
+C>\frac{1.5}{(\frac{1}{A_{S}}-\frac{1}{A_{R}})}
+\end{equation*}
+Setzen wir nur die vorher mit Hilfe von SHARPE berechneten Werte f\"ur die Aviability ein erhalten wir:
+
+
+\bigskip
+
+
+\bigskip
+
+\begin{equation*}
+C>\frac{1.5}{(\frac{1}{0.96899}-\frac{1}{0.99872})}
+\end{equation*}
+
+\bigskip
+
+\begin{equation*}
+C>48.82693
+\end{equation*}
+\begin{equation*}
+\frac{K_{\mathit{Ausfall}}}{K_{\mathit{Normalbetrieb}}}>48.82693
+\end{equation*}
+
+\bigskip
+
+Sobald also die Ausfallkosten des Systems mehr als das 48.83-fache der
+Normalbetriebskosten betragen, ist die fehlertolerant erweiterte
+Systemvariante zu bevorzugen.
+
+
+\bigskip
+\end{document}
