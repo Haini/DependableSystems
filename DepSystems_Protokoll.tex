@@ -7,6 +7,9 @@
 \usepackage[german]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{listings} %For code
+\usepackage{chngpage}
+\usepackage{caption}
+
 
 \begin{document}
 
@@ -39,6 +42,8 @@ Für beide Systeme gelten die folgenden Fehlerraten ($\lambda$) und Reparaturrat
 	\item  $\mu=10^{-2}/Std. $ für Beide
 	
 Um funktionsfähig zu sein benötigt das Netzwerk mindestens einen Switch und drei Rechner.
+Das redundante System wird dann noch um einen Switch, einen Rechner sowie eigenständige Verbindungen erweitert. \\
+
 \end{itemize}
 \section{Mean Time to Failure} 
 \label{sec:mttf}
@@ -58,16 +63,40 @@ Das System kann sowohl graphisch als auch in Textform beschrieben werden:
 \end{figure}
 
 \lstinputlisting{MTTF_Einfach_Modell.txt}
+\newpage
 \subsection{Redundantes System}
 Das redundante Computernetzwerk besteht aus 4 Rechnern und 2 Switches was die Ausfallwahrscheinlichkeit gegenüber dem einfachen System deutlich verringern sollte.\\
-Statt 2 Knoten werden nun 5 Knoten benötigt um alle Übergänge korrekt abzubilden.\\
-Das System ist in den Knoten 0,1,2,3 funktionsfähig, Knoten 4 ist der Fehlerzustand (siehe Grafik \ref{mmtm_redundant}).
-\begin{figure}[ht!]
+Im allgemeinen kann man diese Aufgabenstellung als folgende Markovkette modellieren: 
+\begin{figure}[h]
 \centering
-\includegraphics[width=90mm]{MTTM_ReduntantesModell.png}
-\caption{Redundantes System in \textit{sharpe} modelliert \label{mmtm_redundant}}
-\end{figure}
-\lstinputlisting{MTTF_Redundant_Modell.txt}
+\includegraphics[width=90mm]{zustandsdiagramm_markov.png}
+\caption{Rechnersystem als Markovkette\label{mmtm_model}}
+\end{figure}\\
+Die DOWN-States können für die MTTF zu einem einzigen State 
+zusammengefasst werden. Für die Berechnung der Aviability ist es jedoch 
+notwendig 3 DOWN-States zu unterscheiden.
+Statt 2 Knoten werden nun 5 Knoten benötigt um alle Übergänge korrekt abzubilden.\\
+Das System ist in den Knoten 0,1,2,3 funktionsfähig, Knoten 4 ist der Fehlerzustand (siehe Grafik \ref{fig:mmtm_redundant}).\\\\
+
+\begin{adjustwidth}{-1in}{0in}
+\begin{tabular}[c]{ll}
+
+
+\begin{minipage}{0.8\textwidth}
+
+
+\includegraphics[width=\linewidth]{MTTM_ReduntantesModell.png}
+\label{fig:mmtm_redundant}
+Abbildung \ref{fig:mmtm_redundant} Redundantes System modelliert in \textit{sharpe}
+\end{minipage}
+ 
+ & \begin{minipage}{0.8\textwidth}
+ \lstinputlisting{MTTF_Redundant_Modell.txt}\end{minipage} \\ 
+
+\end{tabular} 
+\end{adjustwidth}
+
+
 \newpage
 \subsection{Vergleich der beiden Systeme}
 \label{subsec:mttf_res}
